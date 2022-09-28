@@ -1,0 +1,44 @@
+<div
+  class="m-2"
+  *ngIf="orderItems?.length"
+>
+  <h2>Order Items</h2>
+
+  <div
+    *ngFor="let item of orderItems"
+    class="my-2"
+  >
+    <div class="d-flex flex-md-row flex-column  justify-content-between border-bottom">
+      <div class="ellipsis">{{item.amount}} x {{item.name}}</div>
+      <div class="mx-2">${{item.value}}</div>
+    </div>
+  </div>
+
+  <h4
+    class="mt-5"
+    *ngIf="total > 0"
+  >Total: ${{total}}</h4>
+
+  <div class="d-flex flex-row justify-content-end mt-5">
+    <button
+      mat-raised-button
+      color="primary"
+      class="mx-3"
+      (click)="createOrder()"
+    >Proceed to payment</button>
+    <button
+      mat-raised-button
+      color=""
+      class="mx-3"
+      (click)="cancelOrder()"
+    >Cancel order</button>
+
+  </div>
+</div>
+
+<div
+  class="m-2"
+  *ngIf="!orderItems?.length"
+>
+  <h2>No Order Items</h2>
+</div>

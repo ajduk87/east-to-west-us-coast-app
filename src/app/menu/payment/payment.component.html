@@ -1,0 +1,70 @@
+<form [formGroup]="paymentForm">
+  <div class="d-flex flex-column">
+    <h3>Order payment</h3>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Card Holder</mat-label>
+      <input
+        matInput
+        formControlName="cardHolder"
+      >
+    </mat-form-field>
+    <!-- <mat-error *ngIf="paymentForm.controls['cardHolder'].touched && paymentForm.invalid">
+      Required field
+    </mat-error> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Card Number</mat-label>
+      <input
+        matInput
+        formControlName="cardNumber"
+      >
+    </mat-form-field>
+    <!-- <mat-error *ngIf="paymentForm.controls['cardNumber'].touched && paymentForm.invalid">
+      Required field
+    </mat-error> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>Expiry Date</mat-label>
+      <input
+        matInput
+        formControlName="expiryDate"
+      >
+    </mat-form-field>
+    <!-- <mat-error *ngIf="paymentForm.controls['expiryDate'].touched && paymentForm.invalid">
+      Required field
+    </mat-error> -->
+
+    <mat-form-field appearance="outline">
+      <mat-label>CCV</mat-label>
+      <input
+        matInput
+        formControlName="ccv"
+      >
+    </mat-form-field>
+    <!-- <mat-error *ngIf="paymentForm.controls['ccv'].touched && paymentForm.invalid">
+      Required field
+    </mat-error> -->
+
+    <div class="d-flex flex-row justify-content-end mt-5">
+      <button
+        mat-raised-button
+        (click)="closeDialog()"
+        color=""
+        class="mx-2"
+      >
+        Cancel
+      </button>
+
+      <button
+        mat-raised-button
+        class="mx-2"
+        color="primary"
+        (click)="confirm()"
+      >
+        Pay
+      </button>
+
+    </div>
+  </div>
+</form>

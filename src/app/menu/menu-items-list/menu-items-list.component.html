@@ -1,0 +1,26 @@
+<div
+  *ngIf="(menuItems$ | async) as menuItems"
+  class="d-flex justify-content-between"
+>
+  <div class="d-flex flex-column w-50 mx-3">
+    <h2>Menu Items</h2>
+    <div *ngFor="let item of menuItems">
+      <app-menu-item
+        [item]="item"
+        (itemAdded)="addToOrder($event)"
+        (itemRemoved)="removeFromOrder($event)"
+      ></app-menu-item>
+    </div>
+  </div>
+
+  <div class="w-50 mx-3">
+    <app-order-form
+      [orderItems]="order"
+      [total]="total"
+      (orderCancelled)="cancelOrder()"
+    ></app-order-form>
+  </div>
+
+</div>
+
+<app-loader *ngIf="(isLoading$ | async)"></app-loader>

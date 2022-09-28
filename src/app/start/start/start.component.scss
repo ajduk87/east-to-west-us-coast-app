@@ -1,0 +1,20 @@
+// .logo {
+//   width : 50%;
+//   margin: 20px auto;
+// }
+
+.heading {
+  font-family: Roboto;
+  font-size  : 50px;
+  color      : white;
+  text-shadow: 3px;
+}
+
+
+.background {
+  background     : url("../../../assets/images/food.jpg");
+  opacity        : 0.75;
+  text-shadow    : 2px 2px #ff0000;
+  background-size: cover;
+  height         : 800px;
+}
